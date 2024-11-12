@@ -265,7 +265,7 @@ Bảng cửu chương 3:
 using namespace std;
 
 void bangcuuchuong(int n) {
-	for (int i = 1; i <= n; i++) {
+	for (int i = 2; i <= n; i++) {
 		cout << "bang cuu chuong " << i << " \n";
 		for (int j = 1; j <= 10; j++) {
 			int nhan = i * j;
