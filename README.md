@@ -1,4 +1,5 @@
-#### Bai 1 buoi 1: (Tìm lỗi) Chương trình sau có lỗi gì? Ghi lại câu thông báo lỗi này, sửa lỗi và cho
+# Buoi 1
+#### Bai 1: (Tìm lỗi) Chương trình sau có lỗi gì? Ghi lại câu thông báo lỗi này, sửa lỗi và cho
 biết kết quả xuất ra màn hình, ý nghĩa của chương trình? Ba tham số trong hàm có gì
 khác nhau? Ý nghĩa của sự khác biệt này?
 ```c
@@ -16,7 +17,7 @@ int main() {
 	return 0;
 }
 ```
-#### Bai 2 buoi 1: (Xuất chữ) Viết hàm xuất chữ khi truyền vào số từ 1 - 9. Nhập sai thì không xuất.
+#### Bai 2: (Xuất chữ) Viết hàm xuất chữ khi truyền vào số từ 1 - 9. Nhập sai thì không xuất.
 ```c
 #include <iostream>
 using namespace std;
@@ -45,7 +46,7 @@ int main() {
 	 return 0;
 }
 ```
-#### Bai 3 buoi 1:  (Hoán vị hai số) Viết chương trình cho phép người dùng nhập vào hai số thực (số
+#### Bai 3:  (Hoán vị hai số) Viết chương trình cho phép người dùng nhập vào hai số thực (số
 thứ nhất lưu vào biến first và số thứ hai lưu vào biến second) và sau đó gọi hàm HoanVi
 (swap) với các tham số thực là first và second. Hàm HoanVi (swap) có các tham số hình
 thức là number1 và number2 sẽ hoán vị giá trị của hai biến. Các giá trị sau khi hoán vị sẽ
@@ -79,7 +80,7 @@ int main() {
 
 }
 ```
-#### Bai 4 buoi 1: (Tính tốc độ Km/h) Viết chương trình nhập vào số Km và số giờ đã đi du lịch.
+#### Bai 4: (Tính tốc độ Km/h) Viết chương trình nhập vào số Km và số giờ đã đi du lịch.
 Chương trình xác định số tốc độ Km trên một giờ. Việc tính toán này được thực hiện
 trong một hàm khác hàm main, hàm main sẽ xuất lên kết quả tính toán. Hàm tính toán
 123
@@ -113,7 +114,7 @@ int main() {
 	return 0;
 }
 ```
-#### Bai 5 buoi 1: (Chuyển điểm số sang điểm chữ) Viết chương trình cho phép người dùng nhập
+#### Bai 5: (Chuyển điểm số sang điểm chữ) Viết chương trình cho phép người dùng nhập
 vào số lượng điểm số. Sau đó, chương trình cho người dùng nhập vào từng điểm số.
 Chương trình sẽ tính tổng của các điểm được nhập và truyền nó cùng với số lượng điểm
 tới một hàm có một tham số “truyền tham chiếu”. Hàm này sẽ tính điểm trung bình các
@@ -160,7 +161,7 @@ int main() {
 	return 0;
 }
 ```
-#### Bai 6 buoi 1:(Tính số giây đồng hồ) Viết một hàm tính số giây theo giờ (gồm ba thông tin giờ,
+#### Bai 6:(Tính số giây đồng hồ) Viết một hàm tính số giây theo giờ (gồm ba thông tin giờ,
 phút và giây) tính từ thời điểm cuối cùng của đồng hồ theo cấu trúc 24h. Sử dụng hàm
 này để tính khoảng cách theo giây giữa hai giờ cho trước, cả hai giờ đều nằm trong chu
 kỳ 24h đồng hồ. Hàm được mô tả như sau:
@@ -171,9 +172,40 @@ kỳ 24h đồng hồ. Hàm được mô tả như sau:
 // Dau ra: TotalSeconds (thay doi tham so thuc tuong ung)
 //********************************************************
 ```c
+#include <iostream>
 
+using namespace std;
+
+void toSeconds(int hour, int minute, int second, int& totalSecond) {
+  int hourToSec = hour * 60 * 60;
+  int minuteToSec = minute * 60;
+  totalSecond = hourToSec + minuteToSec + second;
+}
+
+int main() {
+  int hoursFirst, minutesFirst, secondsFirst;
+  int hoursEnd, minutesEnd, secondsEnd;
+  cout << "Nhap gio, phut, giay dau (enter): ";
+  cin >> hoursFirst >> minutesFirst >> secondsFirst;
+  cout << "Nhap gio, phut, giay cuoi: ";
+  cin >> hoursEnd >> minutesEnd >> secondsEnd;
+
+  if (hoursFirst <= 0 || hoursFirst >= 24 || minutesFirst <= 0 || minutesFirst >= 60 || secondsFirst <= 0 || secondsFirst >= 60 || hoursEnd <= 0 || hoursEnd >= 24 || minutesEnd <= 0 || minutesEnd >= 60 || secondsEnd <= 0 || secondsEnd >= 60 || hoursEnd < hoursFirst) {
+    cout << "Gio khong hop le!";
+    return 1;
+  }
+
+  int hours = hoursEnd - hoursFirst, minutes = minutesEnd - minutesFirst, seconds = secondsEnd - secondsFirst, totalSeconds;
+
+
+  toSeconds(hours, minutes, seconds, totalSeconds);
+
+  cout << totalSeconds << " giay";
+
+  return 0;
+}
 ```
-#### Bai 7 buoi 1: (Tính cạnh huyền) Định nghĩa một hàm có tên Hypotenuse để tính chiều dài cạnh
+#### Bai 7: (Tính cạnh huyền) Định nghĩa một hàm có tên Hypotenuse để tính chiều dài cạnh
 huyền của một tam giác vuông khi biết chiều dài hai cạnh còn lại. Hàm này được mô tả
 như sau:
 //********************************************************
@@ -202,7 +234,7 @@ int main() {
 
 }
 ```
-#### Bai 8 buoi 1:(Xuất bảng cửu chương) Viết hàm xuất bảng cửu chương thứ k. Nhập vào số n>1,
+#### Bai 8:(Xuất bảng cửu chương) Viết hàm xuất bảng cửu chương thứ k. Nhập vào số n>1,
 gọi hàm trên để xuất các bảng cửu chương từ 2 đến n.
 Ví dụ:
 Hay nhap so n (n > 1): 3
