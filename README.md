@@ -285,3 +285,70 @@ int main() {
 	return 0;
 }
 ```
+# Buoi 2
+#### Bai 1:(Kiểm tra dữ liệu nhập hợp lệ) Viết hàm có nguyên mẫu hàm (prototype) như sau:
+void nhapDiem(short& x);
+Điểm hợp lệ từ 0 đến 10, nếu nhập sai thì nhập lại cho đến khi đúng
+Gọi hàm trên để nhập điểm toán, lý, anh. Xuất trung bình cộng 3 điểm.
+```c
+#include <iostream>
+
+using namespace std;
+
+void nhapDiem(short& x) {
+    short toan, ly, anh;
+    cout << "Nhap diem toan ly anh: ";
+nhap_lai:
+    cin >> toan >> ly >> anh;
+
+    if (toan < 0 || ly < 0 || anh < 0) {
+        cout << "Nhap lai: ";
+        goto nhap_lai;
+    }
+
+    x = (toan + ly + anh) / 3;
+}
+
+int main() {
+    short tb;
+    nhapDiem(tb);
+    cout << "Diem trung binh 3 mon la: " << tb;
+
+    return 0;
+}
+```
+#### Bai 2:(Xuất ký tự theo số lượng) Viết hàm có nguyên mẫu hàm (prototype) như sau:
+void inKyTu(char c, short soLan);
+Gọi hàm trên 4 lần để in ra màn hình kết quả như hình bên
+```c
+#include <iostream>
+
+using namespace std;
+
+void inKyTu(char c, short soLan) {
+    for (int i = 1; i <= soLan; i++) {
+        cout << c << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    char c;
+    short soLan;
+    int i = 1;
+
+nhap_lai:
+    cout << "Nhap ky tu va so lan in: ";
+    cin >> c >> soLan;
+
+    inKyTu(c, soLan);
+
+    if (i < 4) {
+        i++;
+        goto nhap_lai;
+    }
+
+    return 0;
+}
+```
+
